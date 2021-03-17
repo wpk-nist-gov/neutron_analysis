@@ -1,0 +1,22 @@
+name: neutron_analysis-env
+channels:
+  - conda-forge
+  - wpk-nist
+dependencies:
+  - python=3.8
+  # because using scm versioning
+  - setuptools>=38.4
+  # cli
+  - pandas
+  - xlrd
+  - openpyxl
+  - lxml
+  - periodictable
+  - numpy
+  - scipy
+  - xarray
+  - netcdf4
+  - matplotlib
+  # tqdm
+  # - tqdm
+  # - jupyter
