@@ -1,5 +1,5 @@
 from .photonatten import PhotonAtten
-from .shielding import NeutronShieldingpPT, NeutronShieldingUser, read_mass_excel
+from .shielding import NeutronShieldingPT, NeutronShieldingUser, read_mass_excel
 from .utils import loc_levels, reorder_index_levels
 
 try:
@@ -15,7 +15,7 @@ __author__ = """William P. Krekelberg"""
 __email__ = "wpk@nist.gov"
 
 __all__ = [
-    "NeutronShieldingpPT",
+    "NeutronShieldingPT",
     "NeutronShieldingUser",
     "read_mass_excel",
     "PhotonAtten",

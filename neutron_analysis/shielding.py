@@ -352,7 +352,7 @@ class NeutronShieldingUser(BaseNeutronSelfShielding):
         )
 
 
-class NeutronShieldingpPT(BaseNeutronSelfShielding):
+class NeutronShieldingPT(BaseNeutronSelfShielding):
     @gcached()
     def sigma_table(self):
         density = from_index_or_col(self.mass_table, "density")
