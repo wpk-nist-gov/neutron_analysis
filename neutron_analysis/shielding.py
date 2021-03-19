@@ -108,7 +108,7 @@ def read_mass_excel(path, sheet_name=0, extra_index=None, **kws):
     # strip element
     df["element"] = df["element"].str.strip()
 
-    if "denisty" not in df.columns:
+    if "density" not in df.columns:
         df["density"] = df["mass"] / (np.pi * df["radius"] ** 2 * df["length"])
 
     if "mass_frac" not in df.columns and "mass_percent" in df.columns:
@@ -134,7 +134,7 @@ class BaseNeutronSelfShielding:
         """
 
         if isinstance(mass_table, pd.Series):
-            mass_table = mass_table.to_series(name="mass_frac")
+            mass_table = mass_table.to_frame(name="mass_frac")
 
         if not isinstance(mass_table, pd.DataFrame):
             raise ValueError("must supply dataframe")

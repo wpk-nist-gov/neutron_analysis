@@ -110,7 +110,6 @@ def reorder_names(names_supplied, names_all):
 def reorder_index_levels(df, order):
 
     new_order = list(reorder_names(order, df.index.names))
-
     out = df.copy()
     out.index = out.index.reorder_levels(new_order)
 

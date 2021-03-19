@@ -13,10 +13,10 @@ dependencies:
   - lxml
   - periodictable
   - numpy
-  - scipy
-  - xarray
-  - netcdf4
-  - matplotlib
+  # - scipy
+  # - xarray
+  # - netcdf4
+  # - matplotlib
   # tqdm
   # - tqdm
   # - jupyter

@@ -226,6 +226,7 @@ class PhotonAtten:
         ratio_name=None,
         uncert_name="uncert",
         value_name=None,
+        ref_levels=("element", "energy"),
     ):
         """
         ratio of "std_val" to other samples
@@ -239,7 +240,7 @@ class PhotonAtten:
         # ratio
         table = self.atten_table_tot[["self_atten_coef"]]
         ref = table.query("sample==@std_val").droplevel(
-            [x for x in table.index.names if x not in ["element"]]
+            [x for x in table.index.names if x not in ref_levels]  # , 'energy']]
         )
 
         if exclude_std:
@@ -253,7 +254,11 @@ class PhotonAtten:
             ratio_name = f"{std_val}/sample"
 
         d = {ratio_name: ratio, uncert_name: uncert}
+
+        # make sure in correct order
+        d = {k: reorder_index_levels(v, table.index.names) for k, v in d.items()}
+
         if value_name is not None:
             d = dict({value_name: table}, **d)
 
-        return pd.concat(d, axis=1)
+        return pd.concat(d, axis=1).loc[table.index]
