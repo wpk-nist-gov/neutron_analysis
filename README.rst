@@ -26,7 +26,36 @@ code for analysis of neutron scattering data
 Features
 --------
 
-* TODO
+* Neutron self-shielding calculation
+* Photon attenuation calculation
+
+
+Installation
+------------
+
+This project is not yet available via conda or on pypi.  The recommended route is to install most dependencies via conda, then pip install directly from github.  For this, do the following:
+
+Assuming you want to build a new environment, do:
+
+.. code-block:: console
+
+    $ conda create -n {env-name} python=3.8 setuptools pandas xlrd openpyxl lxml periodictable pip
+
+    $ conda activate {env-name}
+
+
+To install `neutron_analysis` in the active environment do:
+
+.. code-block:: console
+
+   $ pip install git+https://github.com/wpk-nist-gov/neutron_analysis.git@develop
+
+
+Example usage
+-------------
+
+See demo notebook : `demo <notebooks/demo.ipynb>`_
+
 
 Credits
 -------
